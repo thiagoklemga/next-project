@@ -5,13 +5,20 @@
     "next/core-web-vitals",
     "eslint:recommended"
   ],
+  "plugins": ["testing-library", "jest"],
+  "env": {
+    "jest/globals": true
+  },
   "globals": {
     "React": "readonly",
     "JSX": "readonly"
   },
   "overrides": [
     {
-      "files": ["*.stories.@(ts|tsx|js|jsx|mjs|cjs)"],
+      "files": [
+        "*.stories.@(ts|tsx|js|jsx|mjs|cjs)",
+        "**/tests/**/*.[jt]s?(x)"
+      ],
       "rules": {
         // example of overriding a rule
         "storybook/hierarchy-separator": "error"
