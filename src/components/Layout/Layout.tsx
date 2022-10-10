@@ -1,6 +1,7 @@
 import 'antd/dist/antd.css';
-import type { ReactNode } from 'react';
-import * as S from './Layout.styles';
+import { ReactNode } from 'react';
+import GlobalStyle from '../../styles/globals';
+import { Navbar } from './Navbar/NavBar';
 
 interface ApplicationLayoutProps {
   children: ReactNode;
@@ -10,6 +11,9 @@ export function ApplicationLayout({
   children,
 }: ApplicationLayoutProps): JSX.Element {
   return (
-    <S.ApplicationLayoutContainer>{children}</S.ApplicationLayoutContainer>
+    <>
+      <Navbar>{children}</Navbar>
+      <GlobalStyle />
+    </>
   );
 }
